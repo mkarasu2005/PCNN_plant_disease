@@ -45,9 +45,19 @@ jobs:
         cd package
         zip -r ../deploy.zip .
 
+    # ----------------------------------------------------
+    # 🔐 Azure Login (REQUIRED BEFORE DEPLOY)
+    # ----------------------------------------------------
+    - name: Azure Login via Publish Profile
+      uses: azure/login@v1
+      with:
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+
+    # ----------------------------------------------------
+    # 🚀 Deploy to Azure Web App
+    # ----------------------------------------------------
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'pcnn-plantdoctor'
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
         package: './deploy.zip'
