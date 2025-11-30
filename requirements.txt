@@ -1,0 +1,12 @@
+torch>=2.0
+torchvision
+timm
+numpy
+pandas
+scikit-learn
+tqdm
+opencv-python
+matplotlib
+streamlit
+geopy
+requests
