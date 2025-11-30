@@ -1,0 +1,18 @@
+# Ignore virtual environment
+venv/
+
+# Ignore Python cache
+__pycache__/
+
+# Ignore large datasets
+dataset/
+PlantVillage/
+
+# Ignore OS files
+.DS_Store
+
+# Ignore media files not needed
+*.zip
+
+# Git LFS tracking for model
+*.pth filter=lfs diff=lfs merge=lfs -text
